@@ -1,0 +1,199 @@
+@font-face {
+    font-family: WinterIsComing;
+    src: url("../font/winte_is_coming.otf");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family:'WinterIsComing';
+}
+body {
+    overflow: hidden;
+    background-image: url('../img/background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/***** title *****/
+#title {
+    display: flex;
+    height: 15vh;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+}
+#title > h1 {
+    color: #fff;
+    font-size: 4em;
+}
+
+/***** playboard *****/
+#playboard {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 45vh;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.playboard {
+    height: 230px;
+    width: 230px;
+    border-radius: 50%;
+    border: 5px dotted #FFF;
+}
+#playboardPlayer > .sign {
+    background-color: #0099FF;
+}
+#playboardComputer > .sign {
+    background-color: #FF6666;
+}
+#round {
+    text-align: center;
+    font-size: 4em;
+    color: #FFF;
+}
+.divScore {
+    text-align: center;
+    width: 20vw;
+}
+#scorePlayer {
+    color: #0099FF;
+
+}
+#scoreComputer {
+    color: #FF6666;
+}
+.score {
+    font-size: 10em;
+}
+.title {
+    font-size: 3em;
+}
+
+#signPlayer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 40vh;
+}
+.sign {
+    cursor: pointer;
+    border: 5px solid #FFF;
+    padding: 10px;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+}
+
+.sign:hover {
+    background-color: #0099FF;
+}
+
+/***** Modale ****/
+.modal {
+    padding-top: 10vh;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+    margin: 0 auto;
+    text-align: center;
+    font-size: 8em;
+    color: #FFF;
+}
+.modal img {
+    max-width: 60vw;
+    max-height: 25vw;
+}
+/* Tablette */
+@media only screen and (min-width : 768px) and (max-width : 1024px) {
+    #playboard {
+        flex-wrap: wrap;
+    }
+    #scorePlayer {
+        order: 1;
+        flex-basis: 40vw;
+        padding-right: 10vw;
+    }
+    #scoreComputer {
+        order: 2;
+        flex-basis: 40vw;
+        padding-left: 10vw;
+    }
+    #playboardComputer {
+        order: 3;
+    }
+    #round {
+        order: 4;
+    }
+    #playboardPlayer {
+        order: 5;
+    }
+    
+}
+
+/* Mobile */
+@media only screen and (max-width: 767px) {
+    #title {
+        height: 10vh;
+    }
+    #title > h1 {
+        font-size: 2.5em;
+    }
+    #playboard {
+        display: flex;
+        flex-direction: column;
+        height: 70vh;
+    }
+    .playboard {
+        height: 125px;
+        width: 125px;
+    }
+    .divScore {
+        width: 100vw;
+    }
+    .score {
+        font-size: 3.5em;
+    }
+    .title {
+        font-size: 1.5em;
+    }
+    #signPlayer {
+        height: 20vh;
+    }
+    .sign {
+        border: 2px solid #FFF;
+        width: 100px;
+        height: 100px;
+    }
+    #scoreComputer {
+        order: 1;
+    }
+    #playboardComputer {
+        order: 2;
+    }
+    #round {
+        order: 3;
+        font-size: 1.5em;
+    }
+    #playboardPlayer {
+        order: 4;
+    }
+    #scorePlayer {
+        order: 5;
+    }
+    .modal {
+        padding-top: 30vh;
+        font-size: 6em;
+    }
+    .modal img {
+        max-width: 80vw;
+        max-height: 60vw;
+    }
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shifumi by La Manu</title>
+    <link rel="stylesheet" href="assets/css/game.css">
+    <script src="assets/js/game.js" defer></script>
+</head>
+<body>
+    <div id="shifumi">
+        <!-- Modale -->
+        <div id="modalScore" class="modal">
+            <div class="image"></div>
+            <div class="text"></div>
+        </div>
+        <!-- Titre -->
+        <div id="title">
+            <h1>SHIFUMI</h1>
+        </div>
+        <!-- Playboard -->
+        <div id="playboard">
+            <div id="scorePlayer" class="divScore">
+                <div class="score">0</div>
+                <div class="title"><span id="nickname">Player</span> (<span id="percent"><span>0</span>%</span>)</div>
+            </div>
+            <div id="playboardPlayer" class="playboard"></div>
+            <div id="round">Round <span>1</span></div>
+            <div id="playboardComputer" class="playboard"></div>
+            <div id="scoreComputer" class="divScore">
+                <div class="score">0</div>
+                <div class="title">Computer</div>
+            </div>
+        </div>
+        <!-- Signes -->
+        <div id="signPlayer">
+            <img src="assets/img/scissors.png" data-sign="scissor" class="sign" alt="Ciseaux" >
+            <img src="assets/img/rock.png" data-sign="stone" class="sign" alt="Pierre" >
+            <img src="assets/img/paper.png" data-sign="paper" class="sign" alt="Feuille" > 
+        </div>
+    </div>
+</body>
+</html>
