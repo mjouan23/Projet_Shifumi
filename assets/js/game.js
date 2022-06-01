@@ -34,7 +34,7 @@ function showResult(result, picture, scorePlayer, scoreComputer) {
         // On attend 1s avant de cacher la modale
         setTimeout(function() {
             /****** On réinitialise le tour ******/
-            // 
+            // On supprime les symboles du joueur et de l'ordinateur
             divPlayerboardPlayer.firstElementChild.remove();
             divPayerboardComputer.firstElementChild.remove();
             modalScore.style.display = 'none';
@@ -55,7 +55,7 @@ function showResult(result, picture, scorePlayer, scoreComputer) {
 
                 modalScore.style.display = 'block';
                 setTimeout(function() {
-                    initGame(round);
+                    initRound(round);
                     modalScore.style.display = 'none';
                 }, 1500);
             } else {
@@ -74,7 +74,9 @@ function showResult(result, picture, scorePlayer, scoreComputer) {
     }, 1500);
 }
 
-function initGame(round) {
+// Fonction permettant de réinitialiser un round
+function initRound(round) {
+    // On remet les score à 0 ainsi que le pourcentage de victoire et on renseigne le nouveau round
     scorePlayer = 0;
     scoreComputer = 0;
     percent = 0;
@@ -84,7 +86,9 @@ function initGame(round) {
     divPercent.textContent = percent;
 }
 
+// Fonction permettant de lancer l'action de jouer
 function play(event) {
+
     disablePlay();
     console.log(event.target);
     divPlayerboardPlayer.innerHTML = event.target.outerHTML;
@@ -114,14 +118,8 @@ function play(event) {
     }
 }
 
-function enablePlay() {
-    // On boucle sur les signes du joueur
-    for(sign of signs) {
-        // On écoute quel signe a été cliqué par le joueur
-        sign.addEventListener('click', play)
-    }
-}
-
+// Fonction permettant de désactiver les boutons après avoir joué
+// => évite de cliquer alors que l'action n'a pas encore été prise en compte
 function disablePlay() {
     // On boucle sur les signes du joueur
     for(sign of signs) {
@@ -130,4 +128,14 @@ function disablePlay() {
     }
 }
 
+// Fonction permettant de réactiver les boutons une fois l'action prise en compte
+function enablePlay() {
+    // On boucle sur les signes du joueur
+    for(sign of signs) {
+        // On écoute quel signe a été cliqué par le joueur
+        sign.addEventListener('click', play)
+    }
+}
+
+// On commence par activer la partie
 enablePlay();
